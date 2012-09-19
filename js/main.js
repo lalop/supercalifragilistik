@@ -38,7 +38,27 @@ $(function(){
 	});
 
 	var timeout_id = undefined,
-		divs = $('divs');
+		divs = $('divs'),
+		colors = [
+			'ee5454',
+			'eeb254',
+			'eed654',
+			'a7ee54',
+			'6dee54',
+			'54ee95',
+			'54eede',
+			'54deee',
+			'54b2ee',
+			'548aee',
+			'5458ee',
+			'8354ee',
+			'c454ee',
+			'fff',
+			'222',
+			'999',
+			'ee54c4'
+		],
+		cl = colors.length;
 
 	function build(){
 
@@ -64,10 +84,15 @@ $(function(){
 		/*divs.each(function(i,e){
 			var e = $(e);
 			e.css({backgroundColor:'#'+Math.floor(Math.random()*16777215).toString(16) });
-		});*/
+		});
 			,l = divs.length
 		;
 		for(var e = 0;e < l; e++) divs[e].style.backgroundColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+			*/
+			,l = divs.length
+		;
+		for(var e = 0;e < l; e++) divs[e].className = 'c'+colors[Math.floor(Math.random()*cl)];
+
 	    console.log(id,'run : ', Date.now() - t);
 	    timeout_id = setTimeout(run,1000,id);
 	    

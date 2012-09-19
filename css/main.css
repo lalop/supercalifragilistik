@@ -403,11 +403,11 @@ div{
 	height: 50%;
 	float: left;
 	background-color: #FFF;
-	/*-webkit-transition: background 1s ease-in-out 0s;
+	-webkit-transition: background 1s ease-in-out 0s;
 	-moz-transition: background 1s ease-in-out 0s;
 	-ms-transition: background 1s ease-in-out 0s;
 	-o-transition: background 1s ease-in-out 0s;
-	transition: background 1s ease-in-out 0s;*/
+	transition: background 1s ease-in-out 0s;
 }
 
 #fullscreen{
@@ -431,4 +431,56 @@ input[name="line"]{
     right: 2%;
     top: 48px;
     height: 24px;
+}
+
+.cee5454{
+    background-color: #ee5454;
+}
+.ceeb254{
+    background-color: #eeb254;
+}
+.ceed654{
+    background-color: #eed654;
+}
+.ca7ee54{
+    background-color: #a7ee54;
+}
+.c6dee54{
+    background-color: #6dee54;
+}
+.c54ee95{
+    background-color: #54ee95;
+}
+.c54eede{
+    background-color: #54eede;
+}
+.c54deee{
+    background-color: #54deee;
+}
+.c54b2ee{
+    background-color: #54b2ee;
+}
+.c548aee{
+    background-color: #548aee;
+}
+.c5458ee{
+    background-color: #5458ee;
+}
+.c8354ee{
+    background-color: #8354ee;
+}
+.cc454ee{
+    background-color: #c454ee;
+}
+.cee54c4{
+    background-color: #ee54c4;
+}
+.cfff{
+    background-color: #fff;
+}
+.c222{
+    background-color: #222;
+}
+.c999{
+    background-color: #999;
 }
