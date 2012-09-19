@@ -56,12 +56,17 @@ $(function(){
 	}
 
 	function run(){
-		
-		divs.each(function(i,e){
-			var $e = $(e);
-			$e.css({backgroundColor:'#'+Math.floor(Math.random()*16777215).toString(16) });
-		});
+		var t = Date.now()
+		/*divs.each(function(i,e){
+			var e = $(e);
+			e.css({backgroundColor:'#'+Math.floor(Math.random()*16777215).toString(16) });
+		});*/
+			,l = divs.length
+		;
+		for(var e = 0;e < l; e++) divs[e].style.backgroundColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+	    console.log('run : ', Date.now() - t);
 	    setTimeout(run,1000);
+	    
 	}
 	
 	build();
