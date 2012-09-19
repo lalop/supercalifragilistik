@@ -28,9 +28,13 @@ $(function(){
 		height: $(document).height()
 	});
 	$(window).resize(function(){
-      		$('body').css({
-                	height: $(window).height()
-        	});
+  		$('body').css({
+            	height: $(window).height()
+    	});
+		if(timeout_id !== undefined){
+			clearTimeout(timeout_id);
+		}
+		build();
 	});
 
 	var timeout_id = undefined,
@@ -52,10 +56,10 @@ $(function(){
 	
 		divs = $('div');
 
-		setTimeout(run,1000);
+		setTimeout(run,1000, line*col);
 	}
 
-	function run(){
+	function run(id){
 		var t = Date.now()
 		/*divs.each(function(i,e){
 			var e = $(e);
@@ -64,8 +68,8 @@ $(function(){
 			,l = divs.length
 		;
 		for(var e = 0;e < l; e++) divs[e].style.backgroundColor = '#'+Math.floor(Math.random()*16777215).toString(16);
-	    console.log('run : ', Date.now() - t);
-	    setTimeout(run,1000);
+	    console.log(id,'run : ', Date.now() - t);
+	    setTimeout(run,1000,id);
 	    
 	}
 	

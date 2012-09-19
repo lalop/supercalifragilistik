@@ -403,11 +403,11 @@ div{
 	height: 50%;
 	float: left;
 	background-color: #FFF;
-	-webkit-transition: background 1s ease-in-out 0s;
+	/*-webkit-transition: background 1s ease-in-out 0s;
 	-moz-transition: background 1s ease-in-out 0s;
 	-ms-transition: background 1s ease-in-out 0s;
 	-o-transition: background 1s ease-in-out 0s;
-	transition: background 1s ease-in-out 0s;
+	transition: background 1s ease-in-out 0s;*/
 }
 
 #fullscreen{
