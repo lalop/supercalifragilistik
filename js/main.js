@@ -70,8 +70,6 @@ $(function(){
 			rect = document.createElementNS("http://www.w3.org/2000/svg" , "g"),
 			node,n,
 			svg = $('svg g')[0];
-
-		$('svg').fadeOut('fast');
         node=document.createElementNS("http://www.w3.org/2000/svg" ,"rect");
         node.setAttributeNS(null ,"width",w+1);
         node.setAttributeNS(null ,"height",h+1);
@@ -93,10 +91,8 @@ $(function(){
 				width: $('body').width(),
 				height: $('body').height()
 			//	viewport: '0 0 '+ $('body').width() + ' ' + $('body').height()
-			}).stop(true,true)
-			.fadeOut('slow',function(){
-				$(this).fadeIn('slow');
 			});
+			
 			//.append(append);
 		divs = $('rect');
 		timeout_id = setTimeout(run,1000, line*col);
@@ -112,9 +108,13 @@ $(function(){
 		;
 		for(var e = 0;e < l; e++) divs[e].style.backgroundColor = '#'+Math.floor(Math.random()*16777215).toString(16);
 			*/
-			,l = divs.length
-		;
+			,l = divs.length;
+
+		$('svg').stop(true,true).fadeOut('fast');
+		
 		for(var e = 0;e < l; e++) divs[e].setAttributeNS(null ,"fill",'#'+Math.floor(Math.random()*16777215).toString(16));
+		
+		$('svg').stop(true,true).fadeIn('fast');
 
 	    console.log(id,'run : ', Date.now() - t);
 	    timeout_id = setTimeout(run,1000,id);
