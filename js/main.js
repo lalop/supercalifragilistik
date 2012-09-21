@@ -68,21 +68,22 @@ $(function(){
 			w = $('body').width() / col,
 			h = $('body').height() / line,
 			rect = document.createElementNS("http://www.w3.org/2000/svg" , "g"),
-			node,
+			node,n,
 			svg = $('svg g')[0];
 
-		$('svg rect').remove();
-
+		$('svg').fadeOut('fast');
+        node=document.createElementNS("http://www.w3.org/2000/svg" ,"rect");
+        node.setAttributeNS(null ,"width",w+1);
+        node.setAttributeNS(null ,"height",h+1);
+        
 		for(var j = 0; j < col ; j++){
 			for(var i = 0; i < line; i++){
 		 		//append += '<rect x="'+ j*w +'" y="'+ i*h +'" width="'+ w +'" height="'+ h +'"/>';
-		        node=document.createElementNS("http://www.w3.org/2000/svg" ,"rect");
-		        node.setAttributeNS(null ,"x",j*w);
-		        node.setAttributeNS(null ,"y",i*h);
-		        node.setAttributeNS(null ,"width",w);
-		        node.setAttributeNS(null ,"height",h);
-		        node.setAttributeNS(null ,"fill",'#'+Math.floor(Math.random()*16777215).toString(16));
-		        svg.appendChild(node);
+		 		n = node.cloneNode();
+		        n.setAttributeNS(null ,"x",j*w);
+		        n.setAttributeNS(null ,"y",i*h);
+		        n.setAttributeNS(null ,"fill",'#'+Math.floor(Math.random()*16777215).toString(16));
+		        svg.appendChild(n);
 		       //append += '<rect x="50" y="50" width="100" height="50" fill="red">';
 			}
 		}
@@ -92,6 +93,9 @@ $(function(){
 				width: $('body').width(),
 				height: $('body').height()
 			//	viewport: '0 0 '+ $('body').width() + ' ' + $('body').height()
+			}).stop(true,true)
+			.fadeOut('slow',function(){
+				$(this).fadeIn('slow');
 			});
 			//.append(append);
 		divs = $('rect');
